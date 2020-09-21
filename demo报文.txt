@@ -1,0 +1,16 @@
+curl --location --request POST 'http://al.xiajunyi.com:8084/rest/pdf/render' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "output": "tmp/",
+    "fileName": "api",
+    "url": "https://www.yuque.com/books/share/12029038-5b2d-47d4-8077-91d59d379ad0/wv7x93",
+    "outputType": "PDF",
+    "emulateMediaType":"true"
+}'
+
+
+curl --location --request GET 'http://al.xiajunyi.com:8084/rest/pdf/show' \
+--form 'fileName=tmp' \
+--form 'url=http://www.baidu.com' \
+--form 'outputType=PDF' \
+--form 'emulateMediaType=true'
